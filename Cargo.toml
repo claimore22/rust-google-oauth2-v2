@@ -1,0 +1,39 @@
+[package]
+name = "google-oauth2-v2"
+version = "0.1.0"
+edition = "2024"
+description = "Rust implementation of Google OAuth2 API v2 client"
+license = "BSD-3-Clause"
+
+[lib]
+path = "lib.rs"
+
+[dependencies]
+reqwest = { version = "0.13", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0.18"
+url = "2.5"
+tracing = "0.1"
+
+[dev-dependencies]
+tokio = { version = "1.0", features = ["full"] }
+
+[lints.clippy]
+unwrap_used = "forbid"
+
+# Expect is allowed in development while the design is still being discovered.
+# Must be removed or replaced with proper error handling before CI.
+expect_used = "warn"
+
+panic = "forbid"
+
+# Temporary scaffolding allowed during implementation.
+# Must be fully resolved before CI.
+todo = "warn"
+unimplemented = "warn"
+
+# Complexity is allowed during development but should be actively reduced
+# so that CI remains clean and strictly enforceable.
+cognitive_complexity = "warn"
+complexity = { level = "warn", priority = -1 }

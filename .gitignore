@@ -1,0 +1,28 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Token files (security)
+access_token.json
+*.token
+auth_info.json
+
+# Debug output
+debug_response.json
+*.log
+
+# Temporary files
+*.tmp
+.tmp/
